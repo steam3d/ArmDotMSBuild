@@ -4,8 +4,8 @@
 
   <Identity
     Name="d49b2608-62e5-4f87-a5fd-c5fbb3a9fbc3"
-    Publisher="CN=steam"
-    Version="1.0.3.0" />
+    Publisher="CN=armdottest"
+    Version="1.0.4.0" />
 
   <Properties>
     <DisplayName>PackageProject</DisplayName>

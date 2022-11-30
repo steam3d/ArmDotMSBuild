@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FullTrust</RootNamespace>
     <AssemblyName>FullTrust</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,16 +78,10 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="Protect" AfterTargets="AfterCompile" BeforeTargets="BeforePublish"
-  Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-  <ItemGroup>
-     <Assemblies Include="$(ProjectDir)$(IntermediateOutputPath)$(TargetFileName)" />
-  </ItemGroup>
-  <ArmDot.Engine.MSBuildTasks.ObfuscateTask
-    Inputs="@(Assemblies)"
-    ReferencePaths="@(_ResolveAssemblyReferenceResolvedFiles->'%(RootDir)%(Directory)')"
-    SkipAlreadyObfuscatedAssemblies="true"
-  />
-</Target>
-
+  <Target Name="Protect" AfterTargets="AfterCompile" BeforeTargets="BeforePublish" Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <ItemGroup>
+      <Assemblies Include="$(ProjectDir)$(IntermediateOutputPath)$(TargetFileName)" />
+    </ItemGroup>
+    <ArmDot.Engine.MSBuildTasks.ObfuscateTask Inputs="@(Assemblies)" ReferencePaths="@(_ResolveAssemblyReferenceResolvedFiles->'%(RootDir)%(Directory)')" SkipAlreadyObfuscatedAssemblies="true" />
+  </Target>
 </Project>
