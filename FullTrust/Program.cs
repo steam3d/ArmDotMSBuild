@@ -5,7 +5,7 @@
 [assembly: ArmDot.Client.ObfuscateNamespaces()]
 [assembly: ArmDot.Client.ObfuscateControlFlow()]
 
-//[assembly: ArmDot.Client.VirtualizeCode()]
+[assembly: ArmDot.Client.VirtualizeCode()]
 namespace FullTrust
 {
     class Program

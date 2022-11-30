@@ -5,7 +5,7 @@
   <Identity
     Name="d49b2608-62e5-4f87-a5fd-c5fbb3a9fbc3"
     Publisher="CN=armdottest"
-    Version="1.0.5.0" />
+    Version="1.0.11.0" />
 
   <Properties>
     <DisplayName>PackageProject</DisplayName>
