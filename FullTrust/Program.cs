@@ -1,9 +1,9 @@
 ﻿using System;
 
-[assembly: ArmDot.Client.HideStrings()]
+//[assembly: ArmDot.Client.HideStrings()]
 [assembly: ArmDot.Client.ObfuscateNamesAttribute()]
-[assembly: ArmDot.Client.ObfuscateNamespaces()]
-[assembly: ArmDot.Client.ObfuscateControlFlow()]
+//[assembly: ArmDot.Client.ObfuscateNamespaces()]
+//[assembly: ArmDot.Client.ObfuscateControlFlow()]
 
 [assembly: ArmDot.Client.VirtualizeCode()]
 namespace FullTrust
@@ -14,6 +14,8 @@ namespace FullTrust
         {
             Console.Title = "Hello World";
             Console.WriteLine("This process runs at the full privileges of the user and has access to the entire public desktop API surface");
+
+            
             var i = UselessMethod();
             var useless = new UselessClass(i, "Main");
             Console.WriteLine($"{useless.Count} =  {useless.Tag}");
