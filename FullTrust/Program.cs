@@ -42,7 +42,6 @@ namespace FullTrust
             {
                 try
                 {
-                    //Logger.Debug($"Time: {start} > {DateTime.UtcNow}", category: tag);
                     radio = await adapter.GetRadioAsync();
                     break;
                 }
